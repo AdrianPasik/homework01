@@ -9,25 +9,30 @@ interface Props {
 
 export const Portfolio = (props: Props) => {
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Company Name</th>
-                    <th>Symbol</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            {
-                props.elements.map(element => (
+        <>
+        <div style={{textAlign: `left`, paddingBottom: `1em`}}>
+            <span>Your portfolio</span>
+        </div>
+            <table>
+                <thead>
                     <tr>
-                        <td><Link to={`/details/${element.symbol}`}>{element.name}</Link></td>
-                        <td><Link to={`/details/${element.symbol}`}>{element.symbol}</Link></td>
-                        <td><button onClick={() => props.onStockDelete(element.symbol, element.name)}>Remove</button></td>
+                        <th>Company Name</th>
+                        <th>Symbol</th>
+                        <th>Actions</th>
                     </tr>
-                ))
-            }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                {
+                    props.elements.map(element => (
+                        <tr>
+                            <td><Link to={`/details/${element.symbol}`}>{element.name}</Link></td>
+                            <td><Link to={`/details/${element.symbol}`}>{element.symbol}</Link></td>
+                            <td><button onClick={() => props.onStockDelete(element.symbol, element.name)}>Remove</button></td>
+                        </tr>
+                    ))
+                }
+                </tbody>
+            </table>
+        </>
     )
 };

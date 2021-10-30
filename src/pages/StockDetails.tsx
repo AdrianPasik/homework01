@@ -51,11 +51,15 @@ export const StockDetails = () => {
 
     return (
         <>
+        <div style={{padding: `1em`}}>
             <button onClick={() => history.goBack()}>Go Back</button>
-            <h1>{displayStock.name}</h1>
-            <p><strong>Address:</strong>{displayStock.address}</p>
-            <p><strong>Market Capitalization:</strong>{displayStock.capitalization}</p>
-            <p>{displayStock.description}</p>
+            <div style={{paddingBottom: `1em`}}></div>
+            <h1 style={{paddingBottom: `1em`}}>{displayStock.name}</h1>
+            <p style={{paddingBottom: `1em`}}><strong>Address:</strong>{displayStock.address}</p>
+            <p style={{paddingBottom: `1em`}}><strong>Market Capitalization:</strong>{displayStock.capitalization}</p>
+            <p style={{paddingBottom: `1em`}}>{displayStock.description}</p>
+        </div>
+            
         </>
     );
 }

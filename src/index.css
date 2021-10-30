@@ -4,6 +4,29 @@
     margin: 0;
     padding: 0;
 }
+
+table, td, th {
+    border: 1px solid rgb(61, 61, 61);
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    color: rgb(209, 209, 209);
+    background-color: rgba(83, 73, 73, 0.842);
+}
+th, td {
+    padding: 1em;
+    width: auto;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #d3d1d1;
+}
+
 .search {
     float: left;
     width: 50%;
@@ -11,13 +34,16 @@
 }
 
 .upperTitle {
-    text-align:left;
+    text-align: left;
 }
 
 .portfolio {
     float: left;
     width: 50%;
+    height: 20em;
     padding: 0.5em;
+    padding-right: 3em;
+    border-left: 1px solid rgb(61, 61, 61);
     margin-top: 0.5em;
     text-align: center;
 }

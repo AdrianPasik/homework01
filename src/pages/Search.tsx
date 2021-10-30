@@ -20,13 +20,13 @@ export const Search = (props: Props) => {
         <>
             <div style={{flexDirection: 'column', display:'flex', width: `30em`}}>
                 <label style={{paddingBottom: `1em`}} htmlFor="searchBox"> Company Name </label>
-                <input  type='text' id="searchBox" value={searchToken} onChange={onInputChange} placeholder='Example Apple' />
+                <input style={{width: `20em`}} type='text' id="searchBox" value={searchToken} onChange={onInputChange} placeholder='Example Apple' />
             </div>
-            <div>
-            <SearchResult 
-                searchKey={searchToken}
-                onAddStock={onAddStock}
-            />
+            <div style={{paddingTop: `1em`}}>
+                <SearchResult 
+                    searchKey={searchToken}
+                    onAddStock={onAddStock}
+                />
             </div>
         </>
     );
