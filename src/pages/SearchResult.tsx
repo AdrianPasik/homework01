@@ -6,6 +6,14 @@ interface Props {
     onAddStock: (symbol: string, name: string) => void;
 }
 
+let possibleStocks: Stock[] = [{
+    symbol: 'AAPL',
+    name: 'Apple'
+},
+{
+    symbol: 'MSFT',
+    name: 'Microsoft'
+}];
 
 export const SearchResult = (props: Props) => {
     const initialState: Stock[] = [];
@@ -19,14 +27,8 @@ export const SearchResult = (props: Props) => {
         if(searchToken === '') {
             return [];
         }
-        return [{
-            symbol: 'test1',
-            name: 'test1'
-        },
-        {
-            symbol: 'test2',
-                name: 'test2'
-        }];
+
+        return possibleStocks.filter(p=>p.name.startsWith(searchToken) || p.symbol.startsWith(searchToken));
     }
 
     useEffect(() => {

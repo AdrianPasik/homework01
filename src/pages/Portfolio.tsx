@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Stock } from '../common/Stock';
 
 interface Props {
@@ -20,9 +21,9 @@ export const Portfolio = (props: Props) => {
             {
                 props.elements.map(element => (
                     <tr>
-                        <td>{element.name}</td>
-                        <td>{element.symbol}</td>
-                        <td><button onClick={() => props.onStockDelete(element.name, element.symbol)}>Remove</button></td>
+                        <td><Link to={`/details/${element.symbol}`}>{element.name}</Link></td>
+                        <td><Link to={`/details/${element.symbol}`}>{element.symbol}</Link></td>
+                        <td><button onClick={() => props.onStockDelete(element.symbol, element.name)}>Remove</button></td>
                     </tr>
                 ))
             }
